@@ -1,32 +1,22 @@
-import getStart from '../index.js';
-import getRandomInt from '../utils.js';
-
-const operators = ['-', '+', '*'];
-const description = 'What is the result of the expression?';
-
-const calc = (operator, number1, number2) => {
-  switch (operator) {
-    case '+':
-      return number1 + number2;
-    case '-':
-      return number1 - number2;
-    case '*':
-      return number1 * number2;
+const task2 = () => {
+  const operand1 = Math.round(Math.random() * 10);
+  const operand2 = Math.round(Math.random() * 10);
+  const operator = ['+', '*', '-'];
+  const indexOPer = Math.floor(Math.random() * 2);
+  let answer = '';
+  switch (indexOPer) {
+    case 0:
+      answer = `${operand1 + operand2}`;
+      break;
+    case 1:
+      answer = `${operand1 * operand2}`;
+      break;
     default:
-      throw new Error(`Unknown operator: '${operator}!`);
+      answer = `${operand1 - operand2}`;
+      break;
   }
+
+  return [`${operand1} ${operator[indexOPer]} ${operand2}`, answer];
 };
 
-const generateRound = () => {
-  const operator = operators[getRandomInt(0, operators.length - 1)];
-
-  const number1 = getRandomInt(0, 10);
-  const number2 = getRandomInt(0, 10);
-
-  const correctAnswer = calc(operator, number1, number2);
-  const question = `${number1} ${operator} ${number2}`;
-
-  return [question, correctAnswer];
-};
-
-export default () => getStart(description, generateRound);
+export default task2;

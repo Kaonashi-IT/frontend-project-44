@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import startBrainProgression from '../src/games/progress.js';
+import gameBody from '../src/gameBody.js';
+import brainProgression from '../src/games/progression.js';
 
-startBrainProgression();
+gameBody('What number is missing in the progression?', brainProgression);

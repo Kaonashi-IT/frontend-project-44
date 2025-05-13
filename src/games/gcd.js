@@ -1,28 +1,16 @@
-import getStart from '../index.js';
-
-import getRandomInt from '../utils.js';
-
-const description = 'Find the greatest common divisor of given numbers.';
-
-const getGreatestCommonDivisor = (a, b) => {
-  let num1 = a;
-  let num2 = b;
-  while (num2 !== 0) {
-    const temp = num2;
-    num2 = num1 % num2;
-    num1 = temp;
+const brainGcd = () => {
+  const num1 = Math.round(Math.random() * 50);
+  const num2 = Math.round(Math.random() * 50);
+  let a = num1;
+  let b = num2;
+  while (a !== 0 && b !== 0) {
+    if (a >= b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
   }
-  return Math.abs(num1);
+  const answer = `${a + b}`;
+  return [`${num1} ${num2}`, answer];
 };
-const generateRound = () => {
-  const number1 = getRandomInt(0, 10);
-  const number2 = getRandomInt(0, 10);
-  const randomNumbers = [number1, number2];
-
-  const correctAnswer = getGreatestCommonDivisor(number1, number2);
-  const question = randomNumbers.join(' ');
-
-  return [question, correctAnswer];
-};
-
-export default () => getStart(description, generateRound);
+export default brainGcd;

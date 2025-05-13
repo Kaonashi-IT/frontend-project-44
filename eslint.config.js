@@ -1,16 +1,7 @@
-import globals from "globals";
-
-import path from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import pluginJs from "@eslint/js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({baseDirectory: __dirname, recommendedConfig: pluginJs.configs.recommended});
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
 export default [
-  {languageOptions: { globals: globals.node }},
-  ...compat.extends("airbnb-base"),
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
 ];
-v

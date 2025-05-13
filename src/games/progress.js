@@ -1,26 +1,17 @@
-import getStart from '../index.js';
-import getRandomInt from '../utils.js';
-
-const description = 'What number is missing in the progression?';
-
-const getProgression = (beginProgression, lengthProgression, stepProgression) => {
-  const result = [];
-  for (let i = 0; i <= lengthProgression; i += 1) {
-    result.push(beginProgression + i * stepProgression);
+const brainProgression = () => {
+  const arrayLength = Math.floor(Math.random() * 5) + 5;
+  const progressDelta = Math.round(Math.random() * 10);
+  const firstNumber = Math.round(Math.random() * 100);
+  const progression = [];
+  progression.push(firstNumber);
+  for (let i = 1; i < arrayLength; i += 1) {
+    progression.push(progression[i - 1] + progressDelta);
   }
-  return result;
+  const emptyIndex = Math.floor(Math.random() * arrayLength);
+  const answer = `${progression[emptyIndex]}`;
+  progression[emptyIndex] = '..';
+
+  return [progression.join(' '), answer];
 };
 
-const generateRound = () => {
-  const beginProgression = getRandomInt(0, 100);
-  const lengthProgression = getRandomInt(5, 10);
-  const stepProgression = getRandomInt(2, 5);
-
-  const progression = getProgression(beginProgression, lengthProgression, stepProgression);
-  const correctAnswer = progression.splice(getRandomInt(0, progression.length - 1), 1, '..').join('');
-  const question = progression.join(' ');
-
-  return [question, correctAnswer];
-};
-
-export default () => getStart(description, generateRound);
+export default brainProgression;
