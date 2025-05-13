@@ -1,4 +1,4 @@
-const brainGcd = () => {
+const BrainGcd = () => {
   const num1 = Math.round(Math.random() * 50);
   const num2 = Math.round(Math.random() * 50);
   let a = num1;
@@ -13,4 +13,4 @@ const brainGcd = () => {
   const answer = `${a + b}`;
   return [`${num1} ${num2}`, answer];
 };
-export default brainGcd;
+export default BrainGcd;

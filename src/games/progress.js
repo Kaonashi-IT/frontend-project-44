@@ -1,4 +1,4 @@
-const brainProgression = () => {
+const BrainProgression = () => {
   const arrayLength = Math.floor(Math.random() * 5) + 5;
   const progressDelta = Math.round(Math.random() * 10);
   const firstNumber = Math.round(Math.random() * 100);
@@ -14,4 +14,4 @@ const brainProgression = () => {
   return [progression.join(' '), answer];
 };
 
-export default brainProgression;
+export default BrainProgression;
