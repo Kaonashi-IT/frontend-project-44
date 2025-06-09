@@ -11,16 +11,16 @@ lint-fix:
 	npx eslint . --fix
 
 brain-even:
- node bin/brain-even.js
+	node bin/brain-even.js
 
 brain-calc:
- node bin/brain-calc.js
+	node bin/brain-calc.js
 
 brain-gsd:
- node bin/brain-gsd.js 
+	node bin/brain-gsd.js 
 
 brain-prime:
- node bin/brain-prime.js
+	node bin/brain-prime.js
 
- brain-progression:
-  node bin/brain-progression.js
+brain-progression:
+	node bin/brain-progression.js
