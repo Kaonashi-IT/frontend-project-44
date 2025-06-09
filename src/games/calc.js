@@ -19,4 +19,4 @@ const BrainCalc = () => {
   return [`${operand1} ${operator[indexOPer]} ${operand2}`, answer];
 };
 
-export default BrainCalc;
+export default BrainCalc; b
